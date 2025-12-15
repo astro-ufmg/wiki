@@ -1,0 +1,31 @@
+site_name: UFMG Astro Wiki
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
+  - js/katex.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
+
+plugins:
+  - search
+  - git-authors
+  - git-revision-date-localized

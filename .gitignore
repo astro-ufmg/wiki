@@ -1,0 +1,13 @@
+# MkDocs output
+/site/
+
+# Python env
+.venv/
+__pycache__/
+*.py[cod]
+
+# Editor junk
+*~
+*.swp
+.DS_Store
+
