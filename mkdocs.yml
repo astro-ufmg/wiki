@@ -1,4 +1,5 @@
 site_name: UFMG Astro Wiki
+docs_dir: content
 
 nav:
   - Início: index.md

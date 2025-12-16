@@ -1,4 +1,4 @@
-BUILD_DIR=site
+BUILD_DIR=docs
 
 # Use uv if available
 UV ?= $(shell command -v uv 2> /dev/null)
@@ -19,7 +19,7 @@ setup: .venv
 	$(PIP) install -r requirements.txt
 
 serve:
-	$(PYTHON) -m mkdocs serve
+	$(PYTHON) -m mkdocs serve --livereload
 
 build:
 	$(PYTHON) -m mkdocs build --site-dir $(BUILD_DIR)
