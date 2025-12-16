@@ -94,3 +94,19 @@ $ git push
 Se voce não estiver editando um post simultaneamente a outra pessoa, o commit deve ser naturalmente aceito. Note que adicionamos o diretório `docs` onde as paginas da web foram geradas. É elas que estão sendo exibidas aqui! 
 
 Agora é só pedir para alguem fazer um *pull request* do branch `draft` para o principal `main`. As mudanças neste branch se aplicam ao site publicado em questão de minutos.
+
+## Criando um *pull request*
+
+Se voce é o responsável por mesclar as mudanças no *branch* principal sua tarefa é simples:
+
+1. Entre no [site do repositório](https://github.com/astro-ufmg/wiki).
+2. Clique em `Pull requests`
+3. Clique em `New pull request`
+4. Selecione `base:main <- compare:draft`
+5. Clique em `Create pull request` (duas vezes)
+6. Clique em `Merge pull request` e `Confirm merge`
+
+Com a devida responsabilidade, claro :) 
+
+!!! Nota
+    Temos uma regra automática que só permite mesclagens no branch `main` feitas a partir de *pull requests*.
