@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#ajeitando-o-ambiente" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -555,6 +560,36 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ajeitando-o-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajeitando o ambiente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criando-um-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Criando um post
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -612,7 +647,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -638,10 +673,61 @@
 
   <h1>Postando no blog da astro</h1>
 
-<p>Todos queremos compartilhar o que sabemos, mas raramente temos a oportunidade de estarmos no mesmo ambiente, no mesmo instante e ou com a mesma disponibilidade. A solução para isto é o <strong>blog da astro!</strong>. </p>
+<p>Todos queremos compartilhar o que sabemos, mas raramente temos a oportunidade de estarmos no mesmo ambiente, no mesmo instante e ou com a mesma disponibilidade. A solução para isto é o <strong>blog da astro!</strong></p>
 <!-- more -->
 
-<p>O blog é feito</p>
+<p>O blog é feito utilizando o <a href="https://www.mkdocs.org/">mkdocs</a> e o <a href="https://squidfunk.github.io/mkdocs-material/">Material for mkdocs</a>. Falando forma simples, estes programas convertem markdown em páginas da web, como esta! Tanto os arquivos markdown quanto as páginas geradas são hospedados em um <a href="https://github.com/astro-ufmg/wiki">repositório da astro-ufmg</a>. Para criar ou editar os posts, voce precisa clonar o repositório localmente:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:astro-ufmg/wiki.git
+</code></pre></div>
+<p>Ou usando https se voce preferir (a <a href="https://docs.github.com/pt/enterprise-cloud@latest/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key">autenticação por chaves com SSH</a> é bem mais fácil). Mudanças no blog precisam ser submetidas primeiramente ao branch <em>draft</em>. Vamos então trocar localmente para este <em>branch</em>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>draft
+Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">&#39;draft&#39;</span>
+Your<span class="w"> </span>branch<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date<span class="w"> </span>with<span class="w"> </span><span class="s1">&#39;origin/draft&#39;</span>.
+</code></pre></div>
+<h2 id="ajeitando-o-ambiente">Ajeitando o ambiente</h2>
+<p>Como dito antes, há scripts que convertem o conteúdo em markdown nestas páginas bonitas e arquivam os posts. Para facilitar o proceso, esta incluso no repositório um <code>Makefile</code> que facilita a instalação deste script. Para criar um <em>enviroment</em> com as dependencias necessárias, execute na raiz do repositório: </p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>setup
+</code></pre></div>
+<p>Isto utilizará o pip (ou o <code>uv</code> se instalado) para criar um ambiente em <code>.venv</code> na raiz do repositório local com as dependencias necessárias. Para vizualizar o site localmente enquanto edita, use:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>serve<span class="w"> </span>
+</code></pre></div>
+<p><strong>Toda vez</strong> que algum conteúdo novo for publicado, lembre-se de executar:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>build<span class="w"> </span>
+</code></pre></div>
+<h2 id="criando-um-post">Criando um post</h2>
+<p>Listando os diretórios relevantes, vemos as seguinte estrutura:</p>
+<div class="highlight"><pre><span></span><code>├── content
+│   ├── authors.yml
+│   ├── images
+│   │   └── authors
+│   │       └── ...
+│   └── posts
+│       ├── ...
+</code></pre></div>
+<p>No <code>content/posts</code> voce pode criar um arquivo <code>.md</code> com o post que voce deseja criar. Suponhamos que o título do post seja "Baixando dados de aglomerados", o arquivo deve se chamar <code>baixando-dados-de-aglomerados.md</code> (evitando acentos e caracteres especiais) por uma questão de organização. Todo arquivo de post precisa de um cabeçalho, veja por exemplo o cabeçalho deste post que voce esta lendo:</p>
+<div class="highlight"><pre><span></span><code>---
+title: Postando no blog da astro
+author: [lsmenicucci]
+date: 2025-12-15
+categories:
+<span class="gu">  - meta</span>
+<span class="gu">---</span>
+</code></pre></div>
+<p>O cabeçalho fica delimitado por <code>---</code>. Os nomes no campo <code>author</code> se referem a entradas no arquivo <code>content/authors.yml</code>, caso queira adicionar um autor, veja o arquivo, é autoexplicativo. Agora é so escrever depois do cabeçalho! Para que o post apresente uma versão resumida na lista de posts, coloque <code>&lt;!-- more --&gt;</code> quando voce quiser que o conteúdo abaixo fique restrito apenas a visualização única do post. Algo do tipo:</p>
+<div class="highlight"><pre><span></span><code>Este parágrafo vai aparecer na lista de posts como um resumo!
+
+&lt;!-- more --&gt;
+
+Aqui eu já preciso clicar em &quot;Ler mais&quot; para continuar.
+</code></pre></div>
+<p>Editado o post, lembre-se de gerar o site novamente e <em>commitar</em> para o <em>branch draft</em>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>build
+$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>content/posts/baixando-dados-de-aglomerados.md
+$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>docs<span class="w"> </span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Novo post: Baixando dados de aglomerados&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>push
+</code></pre></div>
+<p>Se voce não estiver editando um post simultaneamente a outra pessoa, o commit deve ser naturalmente aceito. Note que adicionamos o diretório <code>docs</code> onde as paginas da web foram geradas. É elas que estão sendo exibidas aqui!</p>
 
 
 
