@@ -1,3 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://astro-ufmg.github.io/wiki/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://astro-ufmg.github.io/wiki/2025/12/15/introdu%C3%A7%C3%A3o-a-mpi-e-petsc-em-python/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://astro-ufmg.github.io/wiki/2025/12/15/postando-no-blog-da-astro/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://astro-ufmg.github.io/wiki/archive/2025/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://astro-ufmg.github.io/wiki/category/python/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://astro-ufmg.github.io/wiki/category/mpi/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
+    <url>
+         <loc>https://astro-ufmg.github.io/wiki/category/blog/</loc>
+         <lastmod>2025-12-16</lastmod>
+    </url>
 </urlset>
