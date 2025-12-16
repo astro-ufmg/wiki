@@ -19,7 +19,7 @@ setup: .venv
 	$(PIP) install -r requirements.txt
 
 serve:
-	$(PYTHON) -m mkdocs serve --livereload
+	$(PYTHON) -m mkdocs serve --livereload --open
 
 build:
 	$(PYTHON) -m mkdocs build --site-dir $(BUILD_DIR)
