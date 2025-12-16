@@ -224,7 +224,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../category/meta/" class="md-tabs__link">
+        <a href="../../../../category/blog/" class="md-tabs__link">
           
   
   
@@ -452,14 +452,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/meta/" class="md-nav__link">
+      <a href="../../../../category/blog/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    meta
+    blog
   
 
     
@@ -588,6 +588,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#criando-um-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Criando um pull request
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -636,7 +647,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/meta/">meta</a></span>
+                              <a href="../../../../category/blog/">blog</a></span>
                         </div>
                       </li>
                     
@@ -647,7 +658,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -710,7 +721,7 @@ title: Postando no blog da astro
 author: [lsmenicucci]
 date: 2025-12-15
 categories:
-<span class="gu">  - meta</span>
+<span class="gu">  - blog </span>
 <span class="gu">---</span>
 </code></pre></div>
 <p>O cabeçalho fica delimitado por <code>---</code>. Os nomes no campo <code>author</code> se referem a entradas no arquivo <code>content/authors.yml</code>, caso queira adicionar um autor, veja o arquivo, é autoexplicativo. Agora é so escrever depois do cabeçalho! Para que o post apresente uma versão resumida na lista de posts, coloque <code>&lt;!-- more --&gt;</code> quando voce quiser que o conteúdo abaixo fique restrito apenas a visualização única do post. Algo do tipo:</p>
@@ -721,13 +732,30 @@ categories:
 Aqui eu já preciso clicar em &quot;Ler mais&quot; para continuar.
 </code></pre></div>
 <p>Editado o post, lembre-se de gerar o site novamente e <em>commitar</em> para o <em>branch draft</em>:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>build
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>pull
+$<span class="w"> </span>make<span class="w"> </span>build
 $<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>content/posts/baixando-dados-de-aglomerados.md
 $<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>docs<span class="w"> </span>
 $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Novo post: Baixando dados de aglomerados&quot;</span>
 $<span class="w"> </span>git<span class="w"> </span>push
 </code></pre></div>
-<p>Se voce não estiver editando um post simultaneamente a outra pessoa, o commit deve ser naturalmente aceito. Note que adicionamos o diretório <code>docs</code> onde as paginas da web foram geradas. É elas que estão sendo exibidas aqui!</p>
+<p>Se voce não estiver editando um post simultaneamente a outra pessoa, o commit deve ser naturalmente aceito. Note que adicionamos o diretório <code>docs</code> onde as paginas da web foram geradas. É elas que estão sendo exibidas aqui! </p>
+<p>Agora é só pedir para alguem fazer um <em>pull request</em> do branch <code>draft</code> para o principal <code>main</code>. As mudanças neste branch se aplicam ao site publicado em questão de minutos.</p>
+<h2 id="criando-um-pull-request">Criando um <em>pull request</em></h2>
+<p>Se voce é o responsável por mesclar as mudanças no <em>branch</em> principal sua tarefa é simples:</p>
+<ol>
+<li>Entre no <a href="https://github.com/astro-ufmg/wiki">site do repositório</a>.</li>
+<li>Clique em <code>Pull requests</code></li>
+<li>Clique em <code>New pull request</code></li>
+<li>Selecione <code>base:main &lt;- compare:draft</code></li>
+<li>Clique em <code>Create pull request</code> (duas vezes)</li>
+<li>Clique em <code>Merge pull request</code> e <code>Confirm merge</code></li>
+</ol>
+<p>Com a devida responsabilidade, claro :) </p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Temos uma regra automática que só permite mesclagens no branch <code>main</code> feitas a partir de <em>pull requests</em>.</p>
+</div>
 
 
 
