@@ -3,7 +3,7 @@ title: Postando no blog da astro
 author: [lsmenicucci]
 date: 2025-12-15
 categories:
-  - meta
+  - blog 
 ---
 
 Todos queremos compartilhar o que sabemos, mas raramente temos a oportunidade de estarmos no mesmo ambiente, no mesmo instante e ou com a mesma disponibilidade. A solução para isto é o **blog da astro!**
@@ -66,7 +66,7 @@ title: Postando no blog da astro
 author: [lsmenicucci]
 date: 2025-12-15
 categories:
-  - meta
+  - blog 
 ---
 ```
 
@@ -83,6 +83,7 @@ Aqui eu já preciso clicar em "Ler mais" para continuar.
 Editado o post, lembre-se de gerar o site novamente e *commitar* para o *branch draft*:
 
 ```shell
+$ git pull
 $ make build
 $ git add content/posts/baixando-dados-de-aglomerados.md
 $ git add docs 
@@ -90,10 +91,6 @@ $ git commit -m "Novo post: Baixando dados de aglomerados"
 $ git push
 ```
 
-Se voce não estiver editando um post simultaneamente a outra pessoa, o commit deve ser naturalmente aceito. Note que adicionamos o diretório `docs` onde as paginas da web foram geradas. É elas que estão sendo exibidas aqui! Agora 
+Se voce não estiver editando um post simultaneamente a outra pessoa, o commit deve ser naturalmente aceito. Note que adicionamos o diretório `docs` onde as paginas da web foram geradas. É elas que estão sendo exibidas aqui! 
 
-
-
-
-
-
+Agora é só pedir para alguem fazer um *pull request* do branch `draft` para o principal `main`. As mudanças neste branch se aplicam ao site publicado em questão de minutos.
