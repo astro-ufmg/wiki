@@ -1,5 +1,4 @@
-# MkDocs output
-/site/
+.cache
 
 # Python env
 .venv/

@@ -1,14 +1,22 @@
 site_name: UFMG Astro Wiki
 
+nav:
+  - Início: index.md
+
 theme:
   name: material
+  palette:
+    primary: blue-grey
   features:
     - navigation.tabs
     - navigation.instant
     - navigation.tracking
+    - navigation.sections
     - content.code.copy
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - admonition
   - pymdownx.highlight
   - pymdownx.superfences
@@ -27,5 +35,10 @@ extra_css:
 
 plugins:
   - search
-  - git-authors
-  - git-revision-date-localized
+  - blog:
+      blog_dir: .
+      authors: true
+      authors_file: "{blog}/authors.yml"
+      authors_profiles: true
+      authors_profiles_name: Autores
+
